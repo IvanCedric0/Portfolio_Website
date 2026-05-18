@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Github, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -20,38 +20,54 @@ export default function MobileProjectCard({
 }: MobileProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleToggle = () => {
-    onToggle();
-    // Play video when expanding
-    if (!isOpen && videoRef.current && project.media.type === "video" && project.media.video) {
-      const video = videoRef.current;
-      if (!video.src || !video.src.includes(project.media.video)) {
-        video.src = project.media.video;
-        video.load();
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isOpen) {
+      const attemptPlay = () => {
+        video.play().catch(() => {
+          // Autoplay blocked — controls are visible
+        });
+      };
+
+      if (video.readyState >= 3) {
+        attemptPlay();
+      } else {
+        video.addEventListener("canplay", attemptPlay, { once: true });
+        return () => video.removeEventListener("canplay", attemptPlay);
       }
-      video.play().catch(() => { });
+    } else {
+      if (!video.paused) {
+        video.pause();
+      }
     }
-    if (isOpen && videoRef.current) {
-      videoRef.current.pause();
-    }
-  };
+  }, [isOpen]);
+
+  const isVideo = project.media.type === "video" && !!project.media.video;
+  const isImages = project.media.type === "images" && !!project.media.images?.[0];
 
   return (
     <div className="border-b border-border">
-      {/* Row header — always visible */}
+      {/* Row header */}
       <button
-        onClick={handleToggle}
+        onClick={onToggle}
         className="w-full flex items-center gap-4 py-5 text-left"
         aria-expanded={isOpen}
       >
-        <span className="label-caps w-6 flex-shrink-0 tabular-nums">{String(project.index).padStart(2, "0")}</span>
+        <span className="label-caps w-6 flex-shrink-0 tabular-nums text-muted">
+          {String(project.index).padStart(2, "0")}
+        </span>
+
         <div className="flex-1 min-w-0">
-          <p className={`text-lg font-bold transition-colors duration-200 ${isOpen ? "text-foreground" : "text-foreground-3"}`}>
+          <p className={`text-lg font-bold transition-colors duration-200 ${isOpen ? "text-foreground" : "text-foreground-2"}`}>
             {project.title}
           </p>
           <p className="text-xs text-muted mt-0.5">{project.type}</p>
         </div>
+
         <StatusBadge status={project.status} className="flex-shrink-0" />
+
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -61,22 +77,29 @@ export default function MobileProjectCard({
         </motion.div>
       </button>
 
-      {/* Expandable video viewport */}
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden"
-          >
-            <div className="pb-5 flex flex-col gap-4">
-              {/* Media */}
-              <div className="rounded-xl overflow-hidden bg-surface-2 border border-border" style={{ aspectRatio: "16/10" }}>
-                {project.media.type === "video" && project.media.video ? (
+      {/* Expandable content */}
+      <div
+        className={`overflow-hidden ${isOpen ? "" : "h-0"}`}
+        aria-hidden={!isOpen}
+      >
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="pb-5 flex flex-col gap-4"
+            >
+              {/* Media container */}
+              <div
+                className="rounded-xl overflow-hidden bg-surface-2 border border-border w-full"
+                style={{ aspectRatio: "16 / 10" }}
+              >
+                {isVideo && (
                   <video
                     ref={videoRef}
+                    src={project.media.video}
                     muted
                     loop
                     playsInline
@@ -84,23 +107,25 @@ export default function MobileProjectCard({
                     controls
                     className="w-full h-full object-cover"
                   />
-                ) : project.media.type === "images" && project.media.images?.[0] ? (
+                )}
+                {isImages && (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={project.media.images[0]}
-                    alt={project.title}
+                    src={project.media.images![0]}
+                    alt={`${project.title} screenshot`}
                     className="w-full h-full object-cover object-top"
                   />
-                ) : null}
+                )}
               </div>
 
-              {/* Tech + links */}
+              {/* Tech badges */}
               <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((t) => (
                   <span key={t} className="badge-tech">{t}</span>
                 ))}
               </div>
 
+              {/* Action buttons */}
               <div className="flex gap-2">
                 <Link
                   href={`/projects/${project.slug}`}
@@ -115,16 +140,16 @@ export default function MobileProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline text-xs px-4"
-                    aria-label="GitHub"
+                    aria-label={`${project.title} on GitHub`}
                   >
                     <Github className="w-3.5 h-3.5" />
                   </a>
                 )}
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

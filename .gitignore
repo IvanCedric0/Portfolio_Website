@@ -8,8 +8,7 @@
 /coverage
 
 # next.js
-# portfolio/.next/
-# /.next/
+/.next/
 /out/
 
 # production
