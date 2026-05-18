@@ -64,7 +64,7 @@ export default function ProjectDirectory() {
           </p>
         </div>
         <a
-          href="https://github.com/ivankedric"
+          href="https://github.com/ivancedric0"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-ghost text-xs"
