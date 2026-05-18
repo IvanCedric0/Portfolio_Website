@@ -1002,6 +1002,39 @@ video {
     outline-offset: 2px;
     border-radius: 2px;
   }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 /* ─── Layout ─── */
 .container-wide {
   margin-left: auto;
@@ -1264,6 +1297,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.-mx-2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
 .mb-0\.5 {
   margin-bottom: 0.125rem;
 }
@@ -1396,6 +1433,12 @@ video {
 .h-px {
   height: 1px;
 }
+.h-0 {
+  height: 0px;
+}
+.h-\[500px\] {
+  height: 500px;
+}
 .min-h-\[80vh\] {
   min-height: 80vh;
 }
@@ -1452,6 +1495,12 @@ video {
 }
 .w-px {
   width: 1px;
+}
+.w-\[500px\] {
+  width: 500px;
+}
+.w-\[700px\] {
+  width: 700px;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1946,6 +1995,9 @@ video {
 .pt-6 {
   padding-top: 1.5rem;
 }
+.pb-24 {
+  padding-bottom: 6rem;
+}
 .text-left {
   text-align: left;
 }
@@ -2136,6 +2188,9 @@ video {
 .opacity-\[0\.04\] {
   opacity: 0.04;
 }
+.opacity-\[0\.03\] {
+  opacity: 0.03;
+}
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -2180,6 +2235,9 @@ video {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+.transition-none {
+  transition-property: none;
 }
 .duration-150 {
   transition-duration: 150ms;
@@ -2254,6 +2312,11 @@ video {
 
 .group:hover .group-hover\:border-accent\/30 {
   border-color: rgb(255 255 255 / 0.3);
+}
+
+.group:hover .group-hover\:bg-surface {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 15 15 / var(--tw-bg-opacity, 1));
 }
 
 .group:hover .group-hover\:text-foreground {
@@ -2374,6 +2437,11 @@ video {
     padding-right: 2rem;
   }
 
+  .md\:py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
   .md\:pl-16 {
     padding-left: 4rem;
   }
@@ -2455,6 +2523,10 @@ video {
     font-size: 8rem;
     line-height: 1;
     letter-spacing: -0.04em;
+  }
+
+  .lg\:text-\[9rem\] {
+    font-size: 9rem;
   }
 }
 

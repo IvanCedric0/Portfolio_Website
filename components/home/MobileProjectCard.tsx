@@ -29,7 +29,7 @@ export default function MobileProjectCard({
         video.src = project.media.video;
         video.load();
       }
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
     if (isOpen && videoRef.current) {
       videoRef.current.pause();

@@ -131,9 +131,6 @@ export default function ProjectCard({
               </span>
             )}
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {project.description}
-          </p>
         </div>
 
         {/* Tech stack */}
