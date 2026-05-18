@@ -7,9 +7,9 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com/ivankedric",
-  linkedin: "https://linkedin.com/in/kouame-ivan-cedric",
-  email: "kouame.ivan@iugb.edu.ci",
+  github: "https://github.com/ivancedric0",
+  linkedin: " https://www.linkedin.com/in/ivan-cedric-kouame-86133431b",
+  email: "kouameo1@student.iugb.edu.ci",
 };
 
 export const RESUME_URL = "/resume.pdf";
@@ -23,10 +23,10 @@ export const PROJECTS: Project[] = [
     shortTitle: "Everyfit",
     type: "E-Commerce",
     status: "production",
-    year: "2024",
+    year: "2025",
     tech: ["Next.js", "Supabase", "Clerk", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/ivankedric",
-    demo: "https://everyfit.ci",
+    github: "https://github.com/IvanCedric0/Everyfit",
+    demo: "www.everyfit.ci",
     media: {
       type: "video",
       video: "/Videos/everyfit_demo.mp4",
@@ -75,9 +75,9 @@ export const PROJECTS: Project[] = [
     shortTitle: "Bara",
     type: "Marketplace",
     status: "in-progress",
-    year: "2024",
+    year: "2026",
     tech: ["Next.js", "Supabase", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/ivankedric",
+    github: "https://github.com/IvanCedric0/freelancers-marketplace",
     media: {
       type: "video",
       video: "/Videos/bara_demo.mp4",
@@ -125,9 +125,9 @@ export const PROJECTS: Project[] = [
     shortTitle: "AWI 3.0",
     type: "E-Learning",
     status: "completed",
-    year: "2024",
+    year: "2025",
     tech: ["Next.js", "Supabase", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/ivankedric",
+    github: "https://github.com/IvanCedric0/Awi-Learning/",
     media: {
       type: "images",
       images: [
@@ -180,9 +180,9 @@ export const PROJECTS: Project[] = [
     shortTitle: "CharRec AI",
     type: "AI / ML",
     status: "completed",
-    year: "2024",
+    year: "2025",
     tech: ["Next.js", "Python", "MNIST", "TensorFlow", "FastAPI"],
-    github: "https://github.com/ivankedric",
+    github: "https://github.com/IvanCedric0/Emnist_Character_recognition_Web_App",
     media: {
       type: "video",
       video: "/Videos/char_recognition_demo.mp4",
@@ -231,9 +231,9 @@ export const PROJECTS: Project[] = [
     shortTitle: "AlgoViz",
     type: "Dev Tool",
     status: "completed",
-    year: "2023",
+    year: "2026",
     tech: ["Ruby on Rails", "JavaScript", "Canvas API"],
-    github: "https://github.com/ivankedric",
+    github: "https://github.com/IvanCedric0",
     media: {
       type: "video",
       video: "/Videos/algo_visualizer_demo.mp4",
@@ -288,7 +288,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "NexTS(BF)",
     role: "Development & Network Intern",
-    period: "2024",
+    period: "2025",
     type: "Internship",
     description: [
       "Led a complete redesign and rebuild of the company website from the ground up",
