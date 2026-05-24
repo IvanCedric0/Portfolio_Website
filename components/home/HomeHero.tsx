@@ -19,11 +19,11 @@ export default function HomeHero() {
   };
 
   return (
-    <section className="relative mt-52 mb-14 md:mb-0 md:mt-0 min-h-[100vh] md:min-h-[80vh] flex flex-col  justify-end container-wide pb-7 md:pb-16 pt-36 md:pt-28">
+    <section className="relative overflow-x-clip min-h-[100vh] md:min-h-[80vh] flex flex-col justify-end container-wide pb-16 pt-24 md:pt-36">
       {/* Ambient top-left glow — very subtle */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-0 left-0 w-[600px] h-[400px] opacity-[0.04] blur-3xl"
+        className="pointer-events-none absolute top-0 left-0 w-[320px] h-[260px] md:w-[600px] md:h-[400px] opacity-[0.04] blur-3xl"
         style={{
           background: "radial-gradient(ellipse at 20% 40%, #6366f1 0%, transparent 70%)",
         }}
@@ -33,17 +33,17 @@ export default function HomeHero() {
         variants={stagger}
         initial="hidden"
         animate="visible"
-        className="max-w-7xl"
+        className="max-w-5xl"
       >
         {/* Role line */}
-        <motion.p variants={item} className="label-caps mb-10 md:mb-6">
+        <motion.p variants={item} className="label-caps mb-4 md:mb-6">
           Full Stack Developer
         </motion.p>
 
         {/* Giant name */}
         <motion.h1
           variants={item}
-          className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none mb-10 md:mb-6"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none mb-6 break-words"
         >
           KOUAME
           <br />
@@ -53,7 +53,7 @@ export default function HomeHero() {
         {/* Tagline */}
         <motion.p
           variants={item}
-          className="text-xl md:text-lg text-muted max-w-xl md:max-w-lg leading-relaxed mb-16 md:mb-10"
+          className="text-sm md:text-base text-muted max-w-xl md:max-w-lg leading-relaxed mb-8"
         >
           Building production web apps, marketplaces and AI-powered tools.
           <br />
@@ -61,16 +61,16 @@ export default function HomeHero() {
         </motion.p>
 
         {/* Actions */}
-        <motion.div variants={item} className="flex flex-wrap justify-between md:justify-start items-center gap-3">
+        <motion.div variants={item} className="flex flex-wrap items-center gap-1.5">
           <button
             onClick={scrollToWork}
-            className="btn-white w-36 h-12  flex items-center justify-center font-bold text-base"
+            className="btn-white"
           >
             View Work
           </button>
           <a
             href={`mailto:${SOCIAL_LINKS.email}`}
-            className="btn-outline w-36 h-12 flex items-center justify-center font-bold text-base"
+            className="btn-outline"
           >
             Get in Touch
           </a>
@@ -82,7 +82,7 @@ export default function HomeHero() {
             className="btn-ghost"
             aria-label="GitHub"
           >
-            <Github className="w-6 h-6" />
+            <Github className="w-4 h-4" />
           </a>
           <a
             href={SOCIAL_LINKS.linkedin}
@@ -91,7 +91,7 @@ export default function HomeHero() {
             className="btn-ghost"
             aria-label="LinkedIn"
           >
-            <Linkedin className="w-6 h-6" />
+            <Linkedin className="w-4 h-4" />
           </a>
         </motion.div>
       </motion.div>

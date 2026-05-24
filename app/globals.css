@@ -80,13 +80,13 @@
 
   /* ─── Buttons ─── */
   .btn-white {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-semibold text-sm rounded-full transition-all duration-200 hover:bg-foreground-2 active:scale-[0.98];
+    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 bg-foreground text-background font-semibold text-sm rounded-full transition-all duration-200 hover:bg-foreground-2 active:scale-[0.98];
   }
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-border-2 text-foreground-2 font-medium text-sm rounded-full transition-all duration-200 hover:border-border-3 hover:text-foreground active:scale-[0.98];
+    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 border border-border-2 text-foreground-2 font-medium text-sm rounded-full transition-all duration-200 hover:border-border-3 hover:text-foreground active:scale-[0.98];
   }
   .btn-ghost {
-    @apply inline-flex items-center gap-2 px-3 py-2 text-muted font-medium text-sm rounded-lg transition-colors duration-200 hover:text-foreground-3;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 text-muted font-medium text-sm rounded-lg transition-colors duration-200 hover:text-foreground-3;
   }
 
   /* ─── Project row ─── */

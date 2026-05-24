@@ -73,7 +73,7 @@ export default function Navbar() {
               className="md:hidden text-muted hover:text-foreground transition-colors p-1"
               aria-label="Menu"
             >
-              {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>

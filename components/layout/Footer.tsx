@@ -9,21 +9,21 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Left */}
           <div>
-            <p className="text-2xl font-bold text-foreground mb-1">
+            <p className="text-sm font-bold text-foreground mb-1">
               Ivan<span className="text-muted">.</span>
             </p>
-            <p className="text-base text-muted">
+            <p className="text-xs text-muted">
               Full Stack Developer · Côte d&apos;Ivoire
             </p>
           </div>
 
           {/* Projects quick links */}
-          <nav className="flex flex-wrap gap-x-14 md:gap-x-6 gap-y-2">
+          <nav className="flex flex-wrap gap-x-6 gap-y-2">
             {PROJECTS.map((p) => (
               <Link
                 key={p.slug}
                 href={`/projects/${p.slug}`}
-                className="text-base text-muted hover:text-foreground-3 transition-colors"
+                className="text-xs text-muted hover:text-foreground-3 transition-colors"
               >
                 {p.shortTitle}
               </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="footer-social-badges"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-border-2 text-muted hover:text-foreground-3 transition-all"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -46,14 +46,14 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="footer-social-badges"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-border-2 text-muted hover:text-foreground-3 transition-all"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${SOCIAL_LINKS.email}`}
               aria-label="Email"
-              className="footer-social-badges"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-border-2 text-muted hover:text-foreground-3 transition-all"
             >
               <Mail className="w-4 h-4" />
             </a>
@@ -61,10 +61,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-          <p className="text-xs text-muted-2">
+          <p className="text-[11px] text-muted-2">
             © {new Date().getFullYear()} KOUAME Ivan Cédric
           </p>
-          <p className="text-xs text-muted-2 font-mono">
+          <p className="text-[11px] text-muted-2 font-mono">
             Next.js · TypeScript · Tailwind · Framer Motion
           </p>
         </div>
