@@ -56,8 +56,8 @@ export default function ProjectDirectory() {
   return (
     <section id="work" className="container-wide py-10">
       {/* Section header */}
-      <div className="flex items-end justify-between mb-8 border-b border-border pb-5">
-        <div>
+      <div className="flex items-end justify-between mb-8 border-b border-border pb-5 font-bold">
+        <div className="text-2xl">
           <p className="label-caps mb-1">Selected Work</p>
           <p className="text-xs text-muted-2">
             {PROJECTS.length} projects · {new Date().getFullYear()}

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="mx-auto">
         <HomeHero />
         <ProjectDirectory />
         <HomeAbout />

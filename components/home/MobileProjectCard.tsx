@@ -55,15 +55,15 @@ export default function MobileProjectCard({
         className="w-full flex items-center gap-4 py-5 text-left"
         aria-expanded={isOpen}
       >
-        <span className="label-caps w-6 flex-shrink-0 tabular-nums text-muted">
+        <span className="label-caps text-base w-6 flex-shrink-0 tabular-nums text-muted">
           {String(project.index).padStart(2, "0")}
         </span>
 
         <div className="flex-1 min-w-0">
-          <p className={`text-lg font-bold transition-colors duration-200 ${isOpen ? "text-foreground" : "text-foreground-2"}`}>
+          <p className={` text-2xl md:text-lg font-bold transition-colors duration-200 ${isOpen ? "text-foreground" : "text-foreground-2"}`}>
             {project.title}
           </p>
-          <p className="text-xs text-muted mt-0.5">{project.type}</p>
+          <p className="text-lg md:text-xs text-muted mt-0.5">{project.type}</p>
         </div>
 
         <StatusBadge status={project.status} className="flex-shrink-0" />

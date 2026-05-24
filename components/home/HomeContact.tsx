@@ -17,7 +17,7 @@ export default function HomeContact() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="label-caps mb-5">Contact</p>
+        <p className="label-caps mb-5 text-base">Contact</p>
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="max-w-lg">

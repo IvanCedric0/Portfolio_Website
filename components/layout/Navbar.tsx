@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-sm font-bold tracking-tight text-foreground hover:text-foreground-2 transition-colors"
+            className="text-lg font-bold tracking-tight text-foreground hover:text-foreground-2 transition-colors"
           >
             Ivan<span className="text-muted">.</span>
           </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
               className="md:hidden text-muted hover:text-foreground transition-colors p-1"
               aria-label="Menu"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </div>
