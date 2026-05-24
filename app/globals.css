@@ -120,7 +120,10 @@
   .badge-tech {
     @apply inline-flex items-center px-2.5 py-1 text-[11px] font-medium rounded-md bg-surface-3 text-foreground-3 border border-border;
   }
-
+  
+  .footer-social-badges {
+    @apply w-12 h-12 md:w-9 md:h-9 flex items-center justify-center rounded-full border border-border hover:border-border-2 text-muted hover:text-foreground-3 transition-all
+  }
   /* ─── Video player ─── */
   .video-preview-container {
     @apply rounded-xl overflow-hidden bg-surface-2 border border-border;
